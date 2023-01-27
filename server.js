@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser')
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({credentials: true, origin:'https://heartcare247.vercel.app/'}))
+app.use(cors({credentials: true, origin:'https://heartcare247.vercel.app'}))
 
 mongoose.connection.on('open',()=>{
     console.log("connected")
