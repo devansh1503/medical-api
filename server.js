@@ -4,10 +4,12 @@ const express = require('express')
 const { userRoute } = require('./routes/users.route')
 const { presRoute } = require('./routes/pres.route')
 const { appointRoute } = require('./routes/appoint.route')
+const cookieParser = require('cookie-parser')
 
 const app = express()
-app.use(cors({}))
 app.use(express.json())
+app.use(cookieParser())
+app.use(cors({credentials: true, origin:'http://localhost:3000'}))
 
 mongoose.connection.on('open',()=>{
     console.log("connected")
