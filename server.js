@@ -19,7 +19,7 @@ mongoose.connection.on('open',()=>{
 mongoose.connection.error('error',(err)=>{
     console.log(err)
 })
-var server = app.listen(5000)
+var server = app.listen(3000)
 async function connectDB(){
     await mongoose.connect("mongodb+srv://devansh1503:bandd007@cluster0.irh8e.mongodb.net/medicalsystem?retryWrites=true&w=majority")
 
