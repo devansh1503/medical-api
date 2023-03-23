@@ -33,6 +33,10 @@ async function getDoc(){
     const data = await users.find({userRole:'Doctor'})
     return data
 }
+async function getPatients(){
+    const data = await users.find({userRole:'Patient'})
+    return data
+}
 
 async function deleteUser(id) {
     await users.deleteOne({
@@ -51,4 +55,5 @@ module.exports = {
     getDoc,
     deleteUser,
     getOneUser,
+    getPatients,
 }

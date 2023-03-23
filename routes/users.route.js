@@ -1,5 +1,5 @@
 const express = require('express')
-const { getAll, postData, getUser, deleteUser, getDoc, getOneUser } = require('../model/users.control')
+const { getAll, postData, getUser, deleteUser, getDoc, getOneUser, getPatients } = require('../model/users.control')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const usersMongo = require('../model/users.mongo')
@@ -19,6 +19,10 @@ userRoute.get('/users', async (req, res)=>{
 })
 userRoute.get('/doctors', async (req,res)=>{
     const data = await getDoc()
+    res.json(data)
+})
+userRoute.get('/patients', async(req,res)=>{
+    const data = await getPatients()
     res.json(data)
 })
 
