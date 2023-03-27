@@ -28,6 +28,7 @@ userRoute.get('/patients', async(req,res)=>{
 
 userRoute.post('/userspost', async (req, res)=>{
     const data = req.body
+    console.log(data)
     const salt = await bcrypt.genSalt()
     data.password = await bcrypt.hash(data.password, salt)
     console.log(data)
