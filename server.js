@@ -11,7 +11,7 @@ const { chatRoute } = require('./routes/chat.route')
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({credentials: true, origin:["http://localhost:3000","https://heartcare247.vercel.app"]}))
+app.use(cors({credentials: true, origin:["http://localhost:3000","https://heartcare247.vercel.app","http://127.0.0.1:5500"]}))
 
 mongoose.connection.on('open',()=>{
     console.log("connected")
